@@ -19,6 +19,11 @@ export default {
     handleSelectPanel (str) {
       this.panel = str
       localStorage.signPanel = str
+    },
+    handleFakeLogin () {
+      this.$router.push({
+        path: '/main'
+      })
     }
   }
 }

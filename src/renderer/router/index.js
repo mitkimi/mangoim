@@ -6,16 +6,16 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/main',
       name: 'main',
       component: require('@/scene/main').default
     },
     // 登录页面
-    // {
-    //   path: '/',
-    //   name: 'signIn',
-    //   component: require('@/scene/signin').default
-    // },
+    {
+      path: '/',
+      name: 'signIn',
+      component: require('@/scene/signin').default
+    },
     {
       path: '*',
       redirect: '/'

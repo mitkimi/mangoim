@@ -14,6 +14,7 @@
       </div>
     </div>
     </transition>
+    <div class="cover" v-if="pop.onlyShowPop === 'loginLanguage'" @click="handleToggleSelections"></div>
   </div>
 </template>
 <script>
@@ -62,6 +63,7 @@ export default {
     position: absolute;
     right: 0;
     bottom: 30px;
+    z-index: 11;
     .select-item {
       line-height: 30px;
       padding: 0 15px;
@@ -74,6 +76,14 @@ export default {
       }
     }
   }
-  
+  .cover {
+    width: 100vw;
+    height: 100vh;
+    /* background: rgba(0,0,0,.5); */
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    z-index: 10;
+  }
 }
 </style>

@@ -31,7 +31,7 @@
             <mg-input placeholder="密码" type="password"></mg-input>
             <div class="btns">
               <Checkbox>15天内自动登录</Checkbox>
-              <Button type="primary">登 录</Button>
+              <Button type="primary" @click="handleFakeLogin">登 录</Button>
             </div>
           </TabPane>
           <TabPane label="短信登录" name="msg">

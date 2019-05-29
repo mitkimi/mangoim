@@ -5,9 +5,11 @@
 </template>
 
 <script>
-  export default {
-    name: 'mango'
+export default {
+  name: 'mango',
+  methods: {
   }
+}
 </script>
 
 <style>
