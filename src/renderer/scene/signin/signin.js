@@ -1,7 +1,9 @@
 import MgInput from '../../components/mgInput'
+import MgLanguageSelector from './languageSelector'
 export default {
   components: {
-    MgInput
+    MgInput,
+    MgLanguageSelector
   },
   data () {
     return {

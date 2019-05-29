@@ -42,7 +42,7 @@
     width: 350px;
     .collapsed {
       font-size: 18px;
-      line-height: 20px;
+      line-height: 18px;
       text-align: center;
       cursor: pointer;
       color: #909399;
@@ -51,7 +51,6 @@
       }
     }
     .account-container {
-      height: 400px;
       .panel-container {
         height: 300px;
         display: flex;
@@ -75,8 +74,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px 0;
-      height: 400px;
       .title {
         font-size: 20px;
         color: #000000;
@@ -166,31 +163,5 @@
     position: absolute;
     bottom: 20px;
     right: 20px;
-    .selector {
-      color: #ffffff;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .language-select-panel {
-      background: rgba(255,255,255,.85);
-      width: 120px;
-      padding: 8px 0;
-      border-radius: 4px;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      bottom: 30px;
-      .select-item {
-        line-height: 30px;
-        padding: 0 15px;
-        font-size: 16px;
-        cursor: pointer;
-        &:hover {
-          background: #2d8cf0;
-          color: #ffffff;
-          transition: all, 0.3s;
-        }
-      }
-    }
   }
 }
