@@ -1,6 +1,6 @@
 <template>
   <div id="signin">
-    <vue-particles
+    <!-- <vue-particles
       class="particles"
       color="#dedede"
       :particleOpacity="0.7"
@@ -15,7 +15,7 @@
       :moveSpeed="3"
       :hoverEffect="true"
       hoverMode="grab">
-    </vue-particles>
+    </vue-particles> -->
     <div class="ad">
       <h1>Better Work Style for More</h1>
       <h1>Possibilities</h1>
@@ -26,8 +26,20 @@
       <Card class="collapsed" v-if="panel === 'qr'" @click.native="handleSelectPanel('account')">
         <Icon type="md-person" class="icon" /> 账号登录
       </Card>
-      <Card v-if="panel === 'account'">
-        账号登录
+      <Card v-if="panel === 'account'" class="account-container">
+          <Tabs value="account">
+              <TabPane label="账号登录" name="account" class="panel-container">
+                <mg-input placeholder="用户名/手机号码/邮箱地址"></mg-input>
+                <mg-input placeholder="密码" type="password"></mg-input>
+                <div class="btns">
+                  <Checkbox>15天内自动登录</Checkbox>
+                  <Button type="primary">登 录</Button>
+                </div>
+              </TabPane>
+              <TabPane label="短信登录" name="msg">
+                <mg-input placeholder="请输入手机号码"></mg-input>
+              </TabPane>
+          </Tabs>
       </Card>
       <div style="height: 20px;"></div>
       <Card class="collapsed" v-if="panel === 'account'" @click.native="handleSelectPanel('qr')">
@@ -58,6 +70,20 @@
           <div class="back-home notice"><Icon type="ios-arrow-back" /> 返回首页</div>
         </div>
       </Card>
+    </div>
+    <div class="i18n-selector">
+      <div class="selector">
+        简体中文
+        <Icon type="md-arrow-dropup" />
+      </div>
+      <div class="language-select-panel">
+        <div class="select-item">
+          简体中文
+        </div>
+        <div class="select-item">
+          English
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -1,4 +1,8 @@
+import MgInput from '../../components/mgInput'
 export default {
+  components: {
+    MgInput
+  },
   data () {
     return {
       panel: localStorage.signPanel || 'qr',
