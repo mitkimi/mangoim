@@ -2,11 +2,11 @@
   <div id="main">
     <div class="menu-bar">
       <avatar-board></avatar-board>
+      <main-menu></main-menu>
     </div>
-    <div class="list-bar">
-      list
+    <div class="router-view">
+      <router-view></router-view>
     </div>
-    <div class="body"></div>
   </div>
 </template>
 <script src="./main.js"></script>

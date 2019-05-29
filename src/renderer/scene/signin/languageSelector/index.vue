@@ -5,7 +5,7 @@
       <Icon type="md-arrow-dropup" />
     </div>
     <transition name="fade" mode="out-in" appear>
-    <div class="language-select-panel" v-if="onlyShowPop.onlyShowPop === 'loginLanguage'">
+    <div class="language-select-panel" v-if="pop.onlyShowPop === 'loginLanguage'">
       <div class="select-item" @click="handleSelectLanguage">
         简体中文
       </div>
@@ -27,14 +27,14 @@ export default {
 
   },
   computed: mapState([
-    'onlyShowPop'
+    'pop'
   ]),
   methods: {
     ...mapActions([
       'handleSetPop'
     ]),
     handleToggleSelections () {
-      if (this.onlyShowPop.onlyShowPop === 'loginLanguage') {
+      if (this.pop.onlyShowPop === 'loginLanguage') {
         this.handleSetPop(null)
       } else {
         this.handleSetPop('loginLanguage')

@@ -8,14 +8,8 @@
   .menu-bar {
     background: #17233d;
     width: 64px;
-    
   }
-  .list-bar {
-    width: 349px;
-    border-right: 1px solid #efeff3;
-  }
-  .body {
-    width: calc(100vw - 64px - 349px);
-    background: #f90;
+  .router-view {
+    width: calc(100vw - 64px);
   }
 }

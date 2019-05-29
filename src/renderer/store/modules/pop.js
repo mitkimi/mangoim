@@ -1,10 +1,14 @@
 const state = {
-  onlyShowPop: null
+  onlyShowPop: null,
+  currentMenu: 'msg'
 }
 
 const mutations = {
   setShowPop (state, key) {
     state.onlyShowPop = key
+  },
+  setMenu (state, key) {
+    state.currentMenu = key
   }
 }
 
@@ -12,7 +16,9 @@ const actions = {
   handleSetPop ({ commit }, key) {
     // do something async
     commit('setShowPop', key)
-    console.log('from action ==>', arguments)
+  },
+  handleSetMenu ({commit}, key) {
+    commit('setMenu', key)
   }
 }
 

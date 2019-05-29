@@ -8,7 +8,7 @@
       </Tooltip>
     </div>
     <transition name="fade" mode="out-in">
-    <div class="user-info" v-if="onlyShowPop.onlyShowPop === 'userInfo'">
+    <div class="user-info" v-if="pop.onlyShowPop === 'userInfo'">
       <div class="basic-info">
         <div class="name">田昊天</div>
         <div class="avatar">
@@ -60,14 +60,14 @@ export default {
     }
   },
   computed: mapState([
-    'onlyShowPop'
+    'pop'
   ]),
   methods: {
     ...mapActions([
       'handleSetPop'
     ]),
     handleToggle () {
-      if (this.onlyShowPop.onlyShowPop === 'userInfo') {
+      if (this.pop.onlyShowPop === 'userInfo') {
         this.handleSetPop(null)
       } else {
         this.handleSetPop('userInfo')
