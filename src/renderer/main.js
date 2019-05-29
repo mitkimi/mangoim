@@ -1,14 +1,11 @@
 import Vue from 'vue'
 import axios from 'axios'
-// import VueParticles from 'vue-particles'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
-
 import App from './App'
 import router from './router'
 import store from './store'
 Vue.use(iView)
-// Vue.use(VueParticles)
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios

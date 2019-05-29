@@ -1,6 +1,6 @@
 <template>
   <div id="signin">
-    <!-- <vue-particles
+    <vue-particles
       class="particles"
       color="#dedede"
       :particleOpacity="0.7"
@@ -15,7 +15,7 @@
       :moveSpeed="3"
       :hoverEffect="true"
       hoverMode="grab">
-    </vue-particles> -->
+    </vue-particles>
     <div class="ad">
       <h1>Better Work Style for More</h1>
       <h1>Possibilities</h1>
