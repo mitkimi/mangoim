@@ -37,7 +37,12 @@
     <div class="menu-container" ref="menuR">
       <div class="search" v-if="pop.onlyShowPop === 'dialog-search'">
         <div class="menu-page">
-          搜索
+            <Tabs value="msg">
+              <TabPane label="消息记录" name="msg">消息记录</TabPane>
+              <TabPane label="图片" name="image">图片</TabPane>
+              <TabPane label="链接" name="url">链接</TabPane>
+              <TabPane label="文件" name="file">文件</TabPane>
+            </Tabs>
         </div>
       </div>
       <div class="pin" v-if="pop.onlyShowPop === 'dialog-pin'">

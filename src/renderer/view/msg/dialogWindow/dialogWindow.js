@@ -144,8 +144,8 @@ export default {
         const a = setInterval(() => {
           i += 10
           this.$refs.menuR.style.width = `${i}px`
-          if (i >= 350) {
-            this.$refs.menuR.style.width = '350px'
+          if (i >= 380) {
+            this.$refs.menuR.style.width = '380px'
             clearInterval(a)
           }
         }, 1)
@@ -155,7 +155,7 @@ export default {
       this.handleSetPop(`dialog-${key}`)
     },
     handleRoll () {
-      let i = 350
+      let i = 380
       const b = setInterval(() => {
         i -= 10
         this.$refs.menuR.style.width = `${i}px`

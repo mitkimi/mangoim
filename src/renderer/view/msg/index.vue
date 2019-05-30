@@ -6,7 +6,7 @@
         <add-btn></add-btn>
       </div>
       <div class="dialog-list">
-        <div class="group" v-for="dayItem, dayIndex in msg">
+        <div class="group" v-for="dayItem, dayIndex in msg" v-if="dayItem.dialogs.length > 0">
           <div class="group-name">
             <div class="name">{{dayItem.name}}</div>
             <div class="btn" @click="dayItem.unroll = !dayItem.unroll"><Icon type="ios-arrow-dropup" class="transition" :style="!dayItem.unroll ? {transform: 'rotate(180deg)'} : {}" /></div>
