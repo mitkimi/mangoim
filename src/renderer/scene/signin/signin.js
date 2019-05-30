@@ -22,7 +22,7 @@ export default {
     },
     handleFakeLogin () {
       this.$router.push({
-        path: '/main'
+        path: '/main/msg'
       })
     }
   }

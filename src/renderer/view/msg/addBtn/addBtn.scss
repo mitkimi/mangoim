@@ -1,0 +1,53 @@
+.component {
+  position: relative;
+  .add-btn-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #e8eaec;
+    line-height: 24px;
+    text-align: center;
+    transition: all, 0.3s;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .add-btn-menu-container {
+    position: absolute;
+    overflow: hidden;
+    top: 30px;
+    right: 0;
+    display: none;
+    opacity: 0;
+    z-index: 11;
+    .add-btn-menu {
+      margin-top: 5px;
+      width: 120px;
+      border-radius: 4px;
+      background: #515a6e;
+      overflow: hidden;
+      color: #ffffff;
+      .menu-item {
+        cursor: pointer;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        padding: 0 15px;
+        &:hover {
+          background: #808695;
+        }
+      }
+    }
+  }
+  &:hover {
+    .add-btn-container {
+      transform:rotate(90deg);
+      background: #2d8cf0;
+      border-color: #2d8cf0;
+      color: #ffffff;
+    }
+    .add-btn-menu-container {
+      display: block;
+      opacity: 1;
+    }
+  }
+}

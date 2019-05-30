@@ -1,0 +1,20 @@
+.component {
+  .search-bar-container {
+    width: 275px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #e8eaec;
+    display: flex;
+    justify-content: space-between;
+    color: #808695;
+    padding: 0 15px;
+    line-height: 30px;
+    transition: all, 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      border-color: #2d8cf0;
+      color: #2d8cf0;
+    }
+  }
+}

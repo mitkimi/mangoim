@@ -5,10 +5,18 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // 主界面
     {
       path: '/main',
       name: 'main',
-      component: require('@/scene/main').default
+      component: require('@/scene/main').default,
+      children: [
+        {
+          path: 'msg',
+          name: 'msgView',
+          component: require('@/view/msg').default
+        }
+      ]
     },
     // 登录页面
     {
