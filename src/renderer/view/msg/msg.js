@@ -1,9 +1,10 @@
 import SearchBar from './searchBar'
 import AddBtn from './addBtn'
+import DialogWindow from './dialogWindow'
 
 export default {
   components: {
-    SearchBar, AddBtn
+    SearchBar, AddBtn, DialogWindow
   },
   data () {
     return {
@@ -19,7 +20,7 @@ export default {
             {
               name: '田昊天',
               type: 'dialog',
-              avatar: '',
+              avatar: 'http://47.104.80.66:9026/public/uploads/51f8a3457244864aab02af2799276b36.jpeg',
               lastWord: '是吗？哈哈哈',
               readPercent: 100,
               lastWordTime: '13:00'

@@ -11,6 +11,24 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
+const moment = require('moment')
+Vue.filter('day', function (value, formatString) {
+  formatString = formatString || 'M-DD'
+  if (value) {
+    return moment(value).format(formatString)
+  } else {
+    return ''
+  }
+})
+Vue.filter('time', function (value, formatString) {
+  formatString = formatString || 'HH:mm'
+  if (value) {
+    return moment(value).format(formatString)
+  } else {
+    return ''
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   components: { App },

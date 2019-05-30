@@ -64,7 +64,8 @@
       </div>
     </div>
     <div class="view">
-      聊天窗: {{ msg[current.day].name }} , {{msg[current.day].dialogs[current.dialog].name}}
+      <!-- 聊天窗: {{ msg[current.day].name }} , {{msg[current.day].dialogs[current.dialog].name}} -->
+      <dialog-window></dialog-window>
     </div>
   </div>
 </template>
