@@ -62,6 +62,38 @@ export default {
           type: 'string',
           host: 'notme',
           time: new Date() - 30 * 60 * 1000
+        },
+        {
+          msg: '[视频]',
+          type: 'video',
+          id: 'v1',
+          src: 'https://www.heelysfly.com/usr/uploads/2018/12/ad2015_full.mp4',
+          host: 'me',
+          time: new Date() - 30 * 60 * 1000 + 1000
+        },
+        {
+          msg: '[图片]',
+          type: 'img',
+          id: 'i1',
+          src: 'https://www.heelysfly.com/usr/uploads/2018/06/4105169064.jpg',
+          host: 'me',
+          time: new Date() - 30 * 60 * 1000 + 1000
+        },
+        {
+          msg: '[图片]',
+          type: 'img',
+          id: 'i2',
+          src: 'https://www.heelysfly.com/usr/uploads/2018/12/1046308164.jpg',
+          host: 'notme',
+          time: new Date() - 30 * 60 * 1000 + 1000
+        },
+        {
+          msg: '[视频]',
+          type: 'video',
+          id: 'v2',
+          src: 'https://www.heelysfly.com/usr/uploads/2018/12/ad2015_full.mp4',
+          host: 'notme',
+          time: new Date() - 30 * 60 * 1000 + 1000
         }
       ]
     }
@@ -70,7 +102,9 @@ export default {
     'pop'
   ]),
   mounted () {
-    this.autoFocusDialogBottom()
+    setTimeout(() => {
+      this.autoFocusDialogBottom()
+    }, 0)
   },
   methods: {
     ...mapActions([

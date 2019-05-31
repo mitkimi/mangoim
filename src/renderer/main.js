@@ -28,6 +28,17 @@ Vue.filter('time', function (value, formatString) {
     return ''
   }
 })
+Vue.filter('duration', function (value) {
+  const duration = parseInt(value)
+  const MM = parseInt(duration / 60) | 0
+  const ss = duration - MM * 60
+  const SS = ss > 9 ? ss : `0${ss}`
+  if (value) {
+    return `${MM}:${SS}`
+  } else {
+    return '0:00'
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

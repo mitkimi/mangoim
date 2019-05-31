@@ -48,11 +48,46 @@
       <div class="pin" v-if="pop.onlyShowPop === 'dialog-pin'">
         <div class="menu-page">
           <div class="title">Pin</div>
+          <div class="menu-page-body">
+            <div class="nothing">
+              <div class="image">
+                <img src="./image/pin-bg.png" />
+              </div>
+              <div class="desc">将重要消息“<span>Pin</span>”到这里，让团队更容易发现吧！</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="setting" v-if="pop.onlyShowPop === 'dialog-setting'">
         <div class="menu-page">
           <div class="title">设置</div>
+          <div class="partner">
+            <div class="avatar">
+              <img src="http://47.104.80.66:9026/public/uploads/51f8a3457244864aab02af2799276b36.jpeg" />
+            </div>
+            <div class="info">
+              <div class="name">田昊天</div>
+              <div class="email">h@otian.me</div>
+            </div>
+          </div>
+          <div class="group-create">
+            <Icon type="md-add" /> 创建群组
+          </div>
+          <div class="setting-list">
+            <div class="list-item">
+              <div class="label">
+                <div class="name">置顶聊天</div>
+                <div class="remark">打开后，聊天窗口停留在列表顶部</div>
+              </div>
+              <div class="list"><i-switch size="small" /></div>
+            </div>
+            <div class="list-item">
+              <div class="label">
+                <div class="name">消息提醒</div>
+              </div>
+              <div class="list"><i-switch size="small" /></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -62,17 +97,26 @@
     </div>
     </transition>
     <div class="menu-r">
-      <div class="menu-item" @click="pop.onlyShowPop ? handleSwitchMenu('search') : handleUnroll('search')">
+      <div class="menu-item active" v-if="pop.onlyShowPop === 'dialog-search'" @click="handleRoll">
+        <Icon type="md-close-circle" />
+      </div>
+      <div class="menu-item" v-else @click="pop.onlyShowPop ? handleSwitchMenu('search') : handleUnroll('search')">
         <Tooltip content="搜索" placement="left">
           <Icon type="md-desktop" />
         </Tooltip>
       </div>
-      <div class="menu-item" @click="pop.onlyShowPop ? handleSwitchMenu('pin') : handleUnroll('pin')">
+      <div class="menu-item active" v-if="pop.onlyShowPop === 'dialog-pin'" @click="handleRoll">
+        <Icon type="md-close-circle" />
+      </div>
+      <div class="menu-item" v-else @click="pop.onlyShowPop ? handleSwitchMenu('pin') : handleUnroll('pin')">
         <Tooltip content="Pin" placement="left">
           <Icon type="md-pin" />
         </Tooltip>
       </div>
-      <div class="menu-item" @click="pop.onlyShowPop ? handleSwitchMenu('setting') : handleUnroll('setting')">
+      <div class="menu-item active" v-if="pop.onlyShowPop === 'dialog-setting'" @click="handleRoll">
+        <Icon type="md-close-circle" />
+      </div>
+      <div class="menu-item" v-else @click="pop.onlyShowPop ? handleSwitchMenu('setting') : handleUnroll('setting')">
         <Tooltip content="设置" placement="left">
           <Icon type="md-settings" />
         </Tooltip>

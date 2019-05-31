@@ -86,6 +86,99 @@
         font-weight: bold;
         border-bottom: 1px solid #dcdee2;
       }
+      .partner {
+        display: flex;
+        border-bottom: 1px solid #dcdee2;
+        padding: 20px 0;
+        .avatar {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+        }
+        .info {
+          margin-left: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+          }
+          .email {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #c5c8ce;
+          }
+        }
+      }
+      .group-create {
+        height: 50px;
+        border-bottom: 1px solid #dcdee2;
+        font-size: 16px;
+        color: #2b85e4;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: all, .3s;
+        &:hover {
+          color: #5cadff;
+        }
+      }
+      .setting-list {
+        padding: 5px 0;
+        .list-item {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .label {
+            margin: 10px 0;
+            .name {
+              font-size: 14px;
+              color: #000000;
+            }
+            .remark {
+              color: #808695;
+            }
+          }
+          .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
+      }
+      .menu-page-body {
+        width: 100%;
+        height: calc(100vh - 80px);
+        overflow: auto;
+        .nothing {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: calc(100vh - 80px - 100px);
+          .image {
+            width: 120px;
+            img {
+              width: 100%;
+            }
+          }
+          .desc {
+            margin-top: 20px;
+            color: #808695;
+            span {
+              color: #2d8cf0;
+            }
+          }
+        }
+      }
     }
     
   }
@@ -103,6 +196,9 @@
       &:hover {
         color: #2b85e4;
       }
+    }
+    .active {
+      color: #2b85e4;
     }
   }
 }

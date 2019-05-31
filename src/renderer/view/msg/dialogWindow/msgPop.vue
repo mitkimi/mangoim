@@ -5,12 +5,13 @@
       <div class="str day" v-if="devide === 'day'">{{data.time | day}}</div>
       <div class="str time" v-if="devide === 'time'">{{data.time | time}}</div>
       <div class="str time" v-if="devide === 'today'">今天</div>
-      <!-- <div v-else>{{devide}}</div> -->
     </div>
     <div class="msg-pop-container">
       <div class="blank" v-if="!merge"></div>
       <div class="msg-container myMsg" v-if="data.host === 'me'">
-        <div class="msg" v-html="data.msg"></div>
+        <div class="msg" v-if="data.type === 'string'">{{data.msg}}</div>
+        <pop-video :data="data" v-if="data.type === 'video'"></pop-video>
+        <pop-img :data="data" v-if="data.type === 'img'"></pop-img>
         <div class="avatar">
           <Avatar v-if="!merge">田</Avatar>
         </div>
@@ -21,7 +22,9 @@
         <div class="avatar">
           <Avatar v-if="!merge">田</Avatar>
         </div>
-        <div class="msg" v-html="data.msg"></div>
+        <div class="msg" v-if="data.type === 'string'">{{data.msg}}</div>
+        <pop-video :data="data" v-if="data.type === 'video'"></pop-video>
+        <pop-img :data="data" v-if="data.type === 'img'"></pop-img>
         <div class="time-container" v-if="merge">{{data.time | time}}</div>
         <div class="time-container-first" v-else><span v-if="hasDate(data.time)">{{data.time | day}} </span>{{data.time | time}}</div>
       </div>
@@ -29,8 +32,14 @@
   </div>
 </template>
 <script>
+import PopImg from './popImg.vue'
+import PopVideo from './popVideo.vue'
 const Moment = require('moment')
 export default {
+  components: {
+    PopImg,
+    PopVideo
+  },
   props: {
     data: {
       type: Object,
@@ -45,6 +54,13 @@ export default {
       require: false
     }
   },
+  data () {
+    return {
+      mediaView: false
+    }
+  },
+  mounted () {
+  },
   methods: {
     hasDate (time) {
       const today = new Date()
@@ -52,6 +68,7 @@ export default {
       const b = Moment(time).format('MM-DD')
       return !(a === b)
     }
+
   }
 }
 </script>
@@ -106,7 +123,7 @@ export default {
   }
   .myMsg {
     justify-content: flex-end;
-    .msg {
+    .msg,.img {
       background: #ffffff;
       border: 1px solid #dcdee2;
     }
