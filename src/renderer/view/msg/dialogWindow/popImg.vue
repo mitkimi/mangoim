@@ -1,7 +1,7 @@
 <template>
   <div class="img" @click="handleViewMedia">
     <img :src="data.src" />
-    <!-- <transition name="fade" mode="out-in">
+    <transition name="fade" mode="out-in">
       <div v-if="mediaView">
         <div class="window">
           <div class="img-container">
@@ -26,7 +26,7 @@
         </div>
         <div class="view-pic" @click="closeViewMedia"></div>
       </div>
-    </transition> -->
+    </transition>
   </div>
 </template>
 <script>
