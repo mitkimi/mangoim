@@ -9,7 +9,7 @@
     <div class="msg-pop-container">
       <div class="blank" v-if="!merge"></div>
       <div class="msg-container myMsg" v-if="data.host === 'me'">
-        <div class="msg" v-if="data.type === 'string'">{{data.msg}}</div>
+        <div class="msg" v-if="data.type === 'string'" v-html="data.msg"></div>
         <pop-video :data="data" v-if="data.type === 'video'"></pop-video>
         <pop-img :data="data" v-if="data.type === 'img'"></pop-img>
         <div class="avatar">
@@ -22,7 +22,7 @@
         <div class="avatar">
           <Avatar v-if="!merge">田</Avatar>
         </div>
-        <div class="msg" v-if="data.type === 'string'">{{data.msg}}</div>
+        <div class="msg" v-if="data.type === 'string'" v-html="data.msg"></div>
         <pop-video :data="data" v-if="data.type === 'video'"></pop-video>
         <pop-img :data="data" v-if="data.type === 'img'"></pop-img>
         <div class="time-container" v-if="merge">{{data.time | time}}</div>

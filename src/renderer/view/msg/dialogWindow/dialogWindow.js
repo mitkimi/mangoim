@@ -91,7 +91,7 @@ export default {
           msg: '[视频]',
           type: 'video',
           id: 'v2',
-          src: 'https://www.heelysfly.com/usr/uploads/2018/12/ad2015_full.mp4',
+          src: 'https://www.heelysfly.com/usr/uploads/2018/12/bgv.mp4',
           host: 'notme',
           time: new Date() - 30 * 60 * 1000 + 1000
         }
