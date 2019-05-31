@@ -46,7 +46,8 @@ export default {
     handleViewMedia () {
       this.mediaView = true
     },
-    closeViewMedia () {
+    closeViewMedia (e) {
+      e.stopPropagation()
       console.log('1 点击了关闭')
       this.mediaView = false
       console.log('2 设置了值：', this.mediaView)
