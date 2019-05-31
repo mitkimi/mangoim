@@ -60,8 +60,9 @@ export default {
   width: 300px;
   overflow: hidden;
   border-radius: 4px;
-  img {
+  & > img {
     width: 100%;
+    cursor: zoom-in;
   }
   .view-pic {
     width: 100vw;
@@ -70,7 +71,6 @@ export default {
     left: 0;
     top: 0;
     z-index: 19;
-    background:#000000;
   }
   .window {
     position: fixed;

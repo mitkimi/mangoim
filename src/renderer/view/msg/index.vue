@@ -65,7 +65,12 @@
     </div>
     <div class="view">
       <!-- 聊天窗: {{ msg[current.day].name }} , {{msg[current.day].dialogs[current.dialog].name}} -->
-      <dialog-window></dialog-window>
+      <dialog-window v-if="current.day !== null && current.dialog !== null"></dialog-window>
+      <div class="no-msg-container" v-else>
+        <div class="no-msg-img">
+          <img src="./images/no-msg.png" />
+        </div>
+      </div>
     </div>
   </div>
 </template>

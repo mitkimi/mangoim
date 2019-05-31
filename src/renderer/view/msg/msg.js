@@ -9,8 +9,8 @@ export default {
   data () {
     return {
       current: {
-        day: 0,
-        dialog: 0
+        day: null,
+        dialog: null
       },
       msg: [
         {
