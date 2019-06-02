@@ -1,6 +1,9 @@
 <template>
   <div id="main">
     <div class="menu-bar">
+      <div class="window-btn-container">
+        <window-btn></window-btn>
+      </div>
       <avatar-board></avatar-board>
       <main-menu></main-menu>
     </div>

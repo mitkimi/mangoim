@@ -164,4 +164,17 @@
     bottom: 20px;
     right: 20px;
   }
+  .window-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40px;
+    -webkit-app-region: drag;
+    .window-btn-container {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+  }
 }

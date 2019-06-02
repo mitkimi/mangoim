@@ -1,6 +1,8 @@
 'use strict'
 
 import { app, BrowserWindow } from 'electron'
+const electron = require('electron')
+const ipc = electron.ipcMain
 
 /**
  * Set `__static` path to static files in production
@@ -22,7 +24,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 763,
     useContentSize: true,
-    width: 1150
+    width: 1150,
+    frame: false
   })
 
   mainWindow.loadURL(winURL)
@@ -44,6 +47,25 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
+})
+
+ipc.on('close-app', () => {
+  // 通知关闭
+  mainWindow.close()
+})
+ipc.on('max-app', () => {
+  if (mainWindow.isMaximized()) {
+    // 若已经是最大化了，则还原
+    mainWindow.unmaximize()
+  } else {
+    // 最大化窗口
+    mainWindow.maximize()
+  }
+})
+ipc.on('min-app', () => {
+  // 最小化
+  mainWindow.minimize()
+  console.log('hahahhaha')
 })
 
 /**

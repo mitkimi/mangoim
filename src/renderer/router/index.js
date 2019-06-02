@@ -15,6 +15,31 @@ export default new Router({
           path: 'msg',
           name: 'msgView',
           component: require('@/view/msg').default
+        },
+        {
+          path: 'app',
+          name: 'appWebView',
+          component: require('@/view/apps').default
+        },
+        {
+          path: 'calendar',
+          name: 'calendarView',
+          component: require('@/view/calendar').default
+        },
+        {
+          path: 'document',
+          name: 'documentWebView',
+          component: require('@/view/document').default
+        },
+        {
+          path: 'addressBook',
+          name: 'addressBook',
+          component: require('@/view/addressBook').default
+        },
+        {
+          path: 'star',
+          name: 'starView',
+          component: require('@/view/star').default
         }
       ]
     },

@@ -1,9 +1,13 @@
 import AvatarBoard from './avatarBoard'
 import MainMenu from './menu'
+import WindowBtn from '@/components/windowBtn'
+
 export default {
   components: {
     AvatarBoard,
-    MainMenu
+    MainMenu,
+    WindowBtn
+
   },
   data () {
     return {

@@ -33,10 +33,10 @@
       </div>
     </div>
     <div>
-      <div class="menu-item active" v-if="pop.currentMenu==='connector'">
+      <div class="menu-item active" v-if="pop.currentMenu==='addressBook'">
         <Icon type="md-bookmarks" />
       </div>
-      <div class="menu-item" v-else @click="handleSwitchMenuItem('connector')">
+      <div class="menu-item" v-else @click="handleSwitchMenuItem('addressBook')">
         <Icon type="md-bookmarks" />
       </div>
     </div>
@@ -68,6 +68,8 @@ export default {
     ]),
     handleSwitchMenuItem (name) {
       this.handleSetMenu(name)
+      this.handleRoute(`/main/${name}`)
+      // console.log(`/main/${name}`)
     },
     handleRoute (path) {
       this.$router.push({

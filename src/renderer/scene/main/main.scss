@@ -8,6 +8,10 @@
   .menu-bar {
     background: #17233d;
     width: 64px;
+    .window-btn-container {
+      padding: 15px 6px;
+      -webkit-app-region: drag;
+    }
   }
   .router-view {
     width: calc(100vw - 64px);

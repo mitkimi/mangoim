@@ -1,11 +1,13 @@
 import MgInput from '../../components/mgInput'
 import MgLanguageSelector from './languageSelector'
 import VueParticles from './vue-particles/vue-particles'
+import WindowBtn from '@/components/windowBtn'
 export default {
   components: {
     MgInput,
     MgLanguageSelector,
-    VueParticles
+    VueParticles,
+    WindowBtn
   },
   data () {
     return {

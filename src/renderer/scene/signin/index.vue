@@ -74,6 +74,11 @@
     <div class="i18n-selector">
       <mg-language-selector></mg-language-selector>
     </div>
+    <div class="window-bar">
+      <div class="window-btn-container">
+        <window-btn></window-btn>
+      </div>
+    </div>
   </div>
 </template>
 <script src="./signin.js"></script>

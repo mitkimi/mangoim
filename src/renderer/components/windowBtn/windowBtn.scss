@@ -1,0 +1,54 @@
+.window-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  -webkit-app-region: drag;
+  &:hover {
+    .btn {
+      .bt-icon {
+        opacity: 1;
+      }
+    }
+  }
+  .btn {
+    background: #efeff3;
+    width: 12px;
+    height: 12px;
+    // border: 1px sold #333333;
+    border-radius: 50%;
+    margin-right: 8px;
+    cursor: pointer;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+    .bt-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+  .close-bt {
+    background: #ef6a5f;
+    // border: 1px solid #d44e42;
+  }
+  .minsize-bt {
+    background: #f7be4f;
+    // border: 1px solid #daa445;
+  }
+  .maxsize-bt {
+    background: #61c756;
+    // border: 1px solid #4ea73d;
+    .bt-icon {
+      display: flex;
+      transform: rotate(-45deg);
+      margin-left: -5px;
+      margin-top: -3px;
+      .p {
+        margin: -3px;
+      }
+    }
+  }
+}
