@@ -2,7 +2,6 @@
 
 import { app, BrowserWindow } from 'electron'
 
-import { querySystem } from '../renderer/utilitys/tools'
 const electron = require('electron')
 const ipc = electron.ipcMain
 
@@ -18,7 +17,6 @@ let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
-const sys = querySystem()
 function createWindow () {
   /**
    * Initial window options
@@ -27,7 +25,7 @@ function createWindow () {
     height: 763,
     useContentSize: true,
     width: 1150,
-    frame: sys === 'win'
+    frame: false
   })
 
   mainWindow.loadURL(winURL)
