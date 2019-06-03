@@ -7,7 +7,30 @@
       <div v-if="mediaView">
         <div class="cover" @click="handleCloseVideo"></div>
         <div class="pop-video-container">
-          <video :src="data.src" preload controls="controls"></video>
+          <video ref="popVideo" :src="data.src" :loop="popView.loop" preload @ended="end"></video>
+          <div class="float menu">
+            <div class="control-btns">
+              <div class="play-btn-group video-control-btn" @click="handlePopViewAction('play')">
+                <Tooltip content="暂停" v-if="popView.play"  placement="top">
+                  <Icon class="c-btn" type="ios-pause" />
+                </Tooltip>
+                <Tooltip content="播放" v-else placement="top">
+                  <Icon class="c-btn" type="ios-play" />
+                </Tooltip>
+              </div>
+              <div class="play-btn-group video-control-btn" @click="handlePopViewAction('loop')">
+                <Tooltip content="只播一次" v-if="popView.loop" placement="top">
+                  <Icon class="c-btn" type="md-code-working" />
+                </Tooltip>
+                <Tooltip content="单片循环" v-else placement="top">
+                  <Icon class="c-btn" type="md-infinite" />
+                </Tooltip>
+              </div>
+              <div class="period">
+                <Slider v-model="popView.duration" @tip-format="calcDuration" @on-change="handleSetVideoDuration"></Slider>
+              </div>
+            </div>
+          </div>
           <div class="float close-btn" @click="handleCloseVideo">
             <div class="btn-container">
               <Icon type="md-close" />
@@ -29,10 +52,18 @@ export default {
   data () {
     return {
       videoDuration: 0,
-      mediaView: false
+      mediaView: false,
+      popView: {
+        play: false,
+        loop: false,
+        duration: 0
+      },
+      timer: null
     }
   },
   mounted () {
+    // this.popView.length = this.$refs.popVideo.duration
+    console.log('aaaaa', this.$refs.popVideo)
     this.getVideoDuration()
   },
   methods: {
@@ -47,7 +78,44 @@ export default {
     },
     handleCloseVideo () {
       this.mediaView = false
+    },
+    handlePopViewAction (action) {
+      if (action === 'play') {
+        if (this.popView.play) {
+          this.$refs.popVideo.pause()
+          this.popView.play = false
+          clearInterval(this.timer)
+        } else {
+          this.$refs.popVideo.play()
+          this.popView.play = true
+          this.timer = setInterval(() => {
+            this.asyncVideoTime()
+          }, 10)
+        }
+      } else if (action === 'loop') {
+        this.popView.loop = !this.popView.loop
+      }
+      console.log(this.popView)
+    },
+    end () {
+      this.popView.play = false
+      clearInterval(this.timer)
+    },
+    asyncVideoTime () {
+      this.popView.duration = (this.$refs.popVideo.currentTime / this.videoDuration) * 100
+      console.log(this.$refs.popVideo.currentTime)
+    },
+    handleSetVideoDuration (time) {
+      this.$refs.popVideo.currentTime = (time / 100) * this.videoDuration
+    },
+    calcDuration () {
+      const duration = parseInt(this.popView.duration)
+      const MM = parseInt(duration / 60) | 0
+      const ss = duration - MM * 60
+      const SS = ss > 9 ? ss : `0${ss}`
+      return `${MM}:${SS}`
     }
+
   }
 }
 </script>
@@ -137,6 +205,40 @@ export default {
       transition: all, .3s;
       &:hover {
         color: #2d8cf0;
+      }
+    }
+  }
+  .menu {
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    border-radius: 30px;
+    width: 90%;
+    background: #efeff3;
+    .control-btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-bewteen;
+      .video-control-btn {
+        height: 30px;
+        min-width: 30px;
+        background: #dcdee2;
+        border-radius: 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all, 0.3s;
+        box-shadow: inset 0 0 5px rgba(0,0,0,.18);
+        margin: 0 5px;
+        &:hover {
+          box-shadow: inset -2px -2px 5px rgba(0,0,0,.3);
+        }
+      }
+      .period {
+        width: calc(100% - 70px);
+        margin-left: 15px;
       }
     }
   }

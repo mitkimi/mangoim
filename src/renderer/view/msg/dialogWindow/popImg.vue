@@ -22,7 +22,7 @@
               <Icon type="ios-arrow-forward" />
             </div>
           </div>
-          <div class="float menu-op">菜单</div>
+          <!-- <div class="float menu-op">菜单</div> -->
         </div>
         <div class="view-pic" @click="closeViewMedia"></div>
       </div>
@@ -48,9 +48,9 @@ export default {
     },
     closeViewMedia (e) {
       e.stopPropagation()
-      console.log('1 点击了关闭')
+      // console.log('1 点击了关闭')
       this.mediaView = false
-      console.log('2 设置了值：', this.mediaView)
+      // console.log('2 设置了值：', this.mediaView)
     }
   }
 }
