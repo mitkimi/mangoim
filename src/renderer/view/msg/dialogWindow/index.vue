@@ -30,8 +30,9 @@
         <msg-pop v-for="item,index in dialog" :key="index" :data="item" :merge="hasMerge(index)" :devide="hasDevider(index)"></msg-pop>
       </div>
       <div class="editor">
-        文本编辑区域
-        <Button @click="handleSendMsg">模拟聊一句天</Button>
+        <!-- 文本编辑区域
+        <Button @click="handleSendMsg">模拟聊一句天</Button> -->
+        <msg-editor @sendMsg="handleSendMsg"></msg-editor>
       </div>
     </div>
     <div class="menu-container" ref="menuR">

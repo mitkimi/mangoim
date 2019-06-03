@@ -1,9 +1,11 @@
 import { mapState, mapActions } from 'vuex'
 import MsgPop from './MsgPop'
+import MsgEditor from './msgEditor'
 const Moment = require('moment')
 export default {
   components: {
-    MsgPop
+    MsgPop,
+    MsgEditor
   },
   data () {
     return {
@@ -160,9 +162,9 @@ export default {
       const p = this.$refs.dialogs
       p.scrollTop = p.scrollHeight
     },
-    handleSendMsg () {
+    handleSendMsg (msg) {
       this.dialog.push({
-        msg: '模拟的一句话',
+        msg,
         type: 'string',
         host: 'me',
         time: new Date() * 1
