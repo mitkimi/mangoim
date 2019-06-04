@@ -171,10 +171,16 @@
     width: 100vw;
     height: 40px;
     -webkit-app-region: drag;
-    .window-btn-container {
+    .mac-window-btn-container {
       position: absolute;
       top: 15px;
       left: 15px;
     }
+    .win-window-btn-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
+  
 }

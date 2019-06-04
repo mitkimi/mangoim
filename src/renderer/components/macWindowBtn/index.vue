@@ -20,4 +20,4 @@
 
 <script src="./windowBtn.js"></script>
 
-<style lang="scss" src="./windowBtn.scss"></style>
+<style lang="scss" src="./windowBtn.scss" scoped></style>

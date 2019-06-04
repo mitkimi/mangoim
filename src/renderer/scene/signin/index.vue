@@ -75,8 +75,11 @@
       <mg-language-selector></mg-language-selector>
     </div>
     <div class="window-bar">
-      <div class="window-btn-container">
-        <window-btn></window-btn>
+      <div class="mac-window-btn-container" v-if="platform === 'darwin'">
+        <mac-window-btn></mac-window-btn>
+      </div>
+      <div class="win-window-btn-container" v-if="platform === 'win32'">
+        <win-window-btn></win-window-btn>
       </div>
     </div>
   </div>
