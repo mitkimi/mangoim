@@ -9,24 +9,24 @@
           <div class="info">
             <div class="name">田昊天</div>
             <div class="bio">
-              <Icon type="ios-analytics" /> 国家一级退堂鼓演奏大师
+              <span class="iconfont">&#xe6ae;</span> 国家一级退堂鼓演奏大师
             </div>
           </div>
         </div>
         <div class="option">
           <div class="btn-container">
             <Tooltip content="创建群组" placement="bottom">
-              <Icon class="btn" type="md-person-add" />
+              <span class="iconfont btn">&#xe68f;</span>
             </Tooltip>
           </div>
           <div class="btn-container">
             <Tooltip content="完成" placement="bottom">
-              <Icon class="btn" type="md-checkbox" />
+              <span class="iconfont btn">&#xe622;</span>
             </Tooltip>
           </div>
         </div>
       </div>
-      <div class="dialog-view" ref="dialogs">
+      <div class="dialog-view" ref="dialogs" :style="dialogViewStyle">
         <msg-pop v-for="item,index in dialog" :key="index" :data="item" :merge="hasMerge(index)" :devide="hasDevider(index)"></msg-pop>
       </div>
       <div class="editor">
@@ -93,9 +93,7 @@
       </div>
     </div>
     <transition name="fade">
-    <div class="menu-mask" v-if="pop.onlyShowPop" @click="handleRoll">
-      
-    </div>
+    <div class="menu-mask" v-if="pop.onlyShowPop" @click="handleRoll"></div>
     </transition>
     <div class="menu-r">
       <div class="menu-item active" v-if="pop.onlyShowPop === 'dialog-search'" @click="handleRoll">
@@ -103,7 +101,7 @@
       </div>
       <div class="menu-item" v-else @click="pop.onlyShowPop ? handleSwitchMenu('search') : handleUnroll('search')">
         <Tooltip content="搜索" placement="left">
-          <Icon type="md-desktop" />
+          <span class="iconfont">&#xe61c;</span>
         </Tooltip>
       </div>
       <div class="menu-item active" v-if="pop.onlyShowPop === 'dialog-pin'" @click="handleRoll">
@@ -111,7 +109,7 @@
       </div>
       <div class="menu-item" v-else @click="pop.onlyShowPop ? handleSwitchMenu('pin') : handleUnroll('pin')">
         <Tooltip content="Pin" placement="left">
-          <Icon type="md-pin" />
+          <span class="iconfont">&#xe7b3;</span>
         </Tooltip>
       </div>
       <div class="menu-item active" v-if="pop.onlyShowPop === 'dialog-setting'" @click="handleRoll">
@@ -119,7 +117,7 @@
       </div>
       <div class="menu-item" v-else @click="pop.onlyShowPop ? handleSwitchMenu('setting') : handleUnroll('setting')">
         <Tooltip content="设置" placement="left">
-          <Icon type="md-settings" />
+          <span class="iconfont">&#xe65b;</span>
         </Tooltip>
       </div>
     </div>

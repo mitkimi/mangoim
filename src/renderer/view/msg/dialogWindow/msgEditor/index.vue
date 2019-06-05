@@ -8,22 +8,22 @@
       <div class="input-menu">
         <div class="btn">
           <Tooltip content="表情" placement="top">
-            <Icon type="md-flag" />
+            <span class="iconfont btn">&#xe648;</span>
           </Tooltip>
         </div>
         <div class="btn">
           <Tooltip content="提及" placement="top">
-            <Icon class="btn" type="ios-at-outline" />
+            <span class="iconfont btn">&#xe8a6;</span>
           </Tooltip>
         </div>
         <div class="btn">
           <Tooltip content="屏幕截图(Command + Shift + A)" placement="top">
-            <Icon class="btn" type="md-cut" />
+            <span class="iconfont btn">&#xe607;</span>
           </Tooltip>
         </div>
         <div class="btn">
           <Tooltip content="更多" placement="top">
-            <Icon class="btn" type="md-add-circle" />
+            <span class="iconfont btn">&#xe74a;</span>
           </Tooltip>
         </div>
       </div>

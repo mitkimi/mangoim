@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="mood-info">
-        <div class="icon"><Icon type="ios-analytics" /></div>
+        <div class="icon"><span class="iconfont">&#xe6ae;</span></div>
         <div class="bio">
           <div class="bio-show" v-if="!bioEdit">
             {{bio}}<span class="edit-btn" @click="bioEdit = true"><Icon type="ios-brush-outline" /></span>

@@ -10,6 +10,7 @@ export default {
   data () {
     return {
       dialogMenuShow: false,
+      dialogViewStyle: process.platform === 'win32' ? {height: 'calc(100vh - 70px - 100px - 25px)'} : {},
       dialog: [
         {
           msg: '你好啊，小伙伴😄',
@@ -195,7 +196,7 @@ export default {
       const b = setInterval(() => {
         i -= 10
         this.$refs.menuR.style.width = `${i}px`
-        if (i < 0) {
+        if (i <= 0) {
           this.$refs.menuR.style.width = '0px'
           clearInterval(b)
         }

@@ -24,7 +24,7 @@
     </div>
     <div class="card">
       <Card class="account-container">
-        <div class="collapsed" v-if="panel === 'qr'" @click="handleSelectPanel('account')"><Icon type="md-person" class="icon" /> 账号登录</div>
+        <div class="collapsed" v-if="panel === 'qr'" @click="handleSelectPanel('account')"><span class="iconfont icon">&#xe70d;</span> 账号登录</div>
         <Tabs value="account" v-if="panel === 'account'"  style="height: 360px;">
           <TabPane label="账号登录" name="account" class="panel-container">
             <mg-input placeholder="用户名/手机号码/邮箱地址"></mg-input>
@@ -42,7 +42,7 @@
       <div style="height: 20px;"></div>
       <Card class="qr-container">
         <div class="collapsed" v-if="panel === 'account'" @click="handleSelectPanel('qr')">
-          <Icon type="md-qr-scanner" class="icon" /> 扫码登录
+          <span class="iconfont icon">&#xe64c;</span> 扫码登录
         </div>
         <div v-if="panel === 'qr'" style="height: 360px;">
           <div v-if="qr === 'home'">
