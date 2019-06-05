@@ -1,13 +1,13 @@
 <template>
   <div class="window-btn">
     <div class="btn minsize-bt" @click="handleMinsizeWindow">
-      <Icon type="md-remove" class="bt-icon" />
+      <span class="iconfont bt-icon">&#xe61d;</span>
     </div>
     <div class="btn maxsize-bt"  @click="handleMaxsizeWindow">
-      <Icon class="bt-icon" type="ios-photos-outline" />
+      <span class="iconfont bt-icon">&#xe534;</span>
     </div>
     <div class="btn close-bt"  @click="handleCloseWindow">
-      <Icon type="md-close" class="bt-icon" />
+      <span class="iconfont bt-icon">&#xe60f;</span>
     </div>
   </div>
 </template>

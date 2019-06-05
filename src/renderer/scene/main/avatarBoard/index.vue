@@ -4,7 +4,7 @@
       <Avatar size="large" src="http://47.104.80.66:9026/public/uploads/51f8a3457244864aab02af2799276b36.jpeg"></Avatar>
       <div class="dot"></div>
       <Tooltip class="mood" :content="bio" placement="right">
-        <Icon type="ios-analytics" />
+        <span class="iconfont">&#xe6ae;</span>
       </Tooltip>
     </div>
     <transition name="fade" mode="out-in">
