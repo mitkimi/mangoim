@@ -74,10 +74,13 @@
     <div class="i18n-selector">
       <mg-language-selector></mg-language-selector>
     </div>
-    <div class="window-bar">
-      <div class="mac-window-btn-container" v-if="platform === 'darwin'">
+    <div class="window-bar" v-if="platform === 'darwin'">
+      <div class="mac-window-btn-container">
         <mac-window-btn></mac-window-btn>
       </div>
+    </div>
+    <div class="win-window-bar">
+      <div class="window-bar"></div>
       <div class="win-window-btn-container" v-if="platform === 'win32'">
         <win-window-btn></win-window-btn>
       </div>

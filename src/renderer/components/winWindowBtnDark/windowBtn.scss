@@ -9,7 +9,7 @@
     margin: 0;
     cursor: pointer;
     position: relative;
-    color: #ffffff;
+    color: #333333;
     &:hover {
       color: #333333;
     }
@@ -25,6 +25,7 @@
     background: #ef6a5f;
   }
   .minsize-bt:hover, .maxsize-bt:hover {
-    background: rgba(255,255,255,.48);
+    background: rgba(0,0,0,.4);
+    color: #ffffff;
   }
 }
