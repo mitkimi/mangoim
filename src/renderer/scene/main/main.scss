@@ -24,10 +24,9 @@
       .drag-area {
         width: calc(100% - 150px);
         height: 28px;
+        -webkit-app-region: drag;
       }
-      .control-btns {
-
-      }
+      .control-btns {}
     }
     width: calc(100vw - 64px);
   }
