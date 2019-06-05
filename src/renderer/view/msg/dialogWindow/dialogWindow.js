@@ -37,6 +37,14 @@ export default {
           time: new Date() - 23 * 3600 * 1000
         },
         {
+          msg: '[视频]',
+          type: 'video',
+          id: 'v0',
+          src: 'https://static1.gotokeep.com/homepage/5s.mp4',
+          host: 'me',
+          time: new Date() - 23 * 3600 * 1000 - 1000
+        },
+        {
           msg: '我就先睡觉去了',
           type: 'string',
           host: 'me',

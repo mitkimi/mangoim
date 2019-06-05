@@ -59,12 +59,16 @@ export default {
   data () {
     return {
       current: 'msg',
-      date: (new Date()).getDate()
+      date: (new Date()).getDate(),
+      timer: null
     }
   },
   computed: mapState([
     'pop'
   ]),
+  mounted () {
+    this.syncDateNum()
+  },
   methods: {
     ...mapActions([
       'handleSetMenu'
@@ -78,6 +82,12 @@ export default {
       this.$router.push({
         path
       })
+    },
+    syncDateNum () {
+      clearInterval(this.timer)
+      this.timer = setInterval(() => {
+        this.date = (new Date()).getDate()
+      }, 1000)
     }
   }
 }
